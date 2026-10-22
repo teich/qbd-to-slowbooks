@@ -1,9 +1,9 @@
 # qbd-to-slowbooks
 
 Loads QuickBooks Desktop data into [SlowBooks Pro](https://www.slowbookspro.com/)
-through its REST API. The data comes from
-[qbd-exporter](https://github.com/asphaltanchors/qbd-exporter), which exports
-a QuickBooks Desktop company file into Postgres every night.
+through its REST API. The data comes from qbd-exporter (to be published
+separately), which exports a QuickBooks Desktop company file into Postgres
+every night.
 
 ```
 QuickBooks Desktop ──qbd-exporter──▶ Postgres (quickbooks_ingest) ──qbd-to-slowbooks──▶ SlowBooks Pro API
@@ -71,3 +71,7 @@ anything was refused or a balance differs, so it can run from cron.
 Each `reset` makes SlowBooks take a safety backup before restoring. Those
 `pre-restore` backups build up in the server's backup folder; prune them
 there.
+
+## License
+
+MIT. See [LICENSE](LICENSE).
