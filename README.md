@@ -68,9 +68,12 @@ uv run qbd-to-slowbooks verify
 Each command writes a JSON report under `runs/`. `run` exits non-zero when
 anything was refused or a balance differs, so it can run from cron.
 
-Each `reset` makes SlowBooks take a safety backup before restoring. Those
-`pre-restore` backups build up in the server's backup folder; prune them
-there.
+A `reset` through the API makes SlowBooks take a safety backup before
+restoring. Those `pre-restore` backups build up in the server's backup
+folder; prune them there. A `SLOWBOOKS_RESET_COMMAND` restore makes none.
+
+The first load of about ten years of books (8.7k customers, 38k journal
+entries) took 4 minutes against a local server and 10 over a VPN.
 
 ## License
 
